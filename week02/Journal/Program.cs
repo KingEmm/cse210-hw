@@ -39,7 +39,7 @@ class Program
         }
         catch (System.FormatException)
         {
-            Console.Write("Invalid input Select form a given range of 0 - 6 > ");
+            Console.Write("Invalid Input Please Select option form a given range of 0 - 6 > ");
             return GetMenuOption();
         }
     }
@@ -59,19 +59,19 @@ class Program
                     ans = false;
                     break;
                 case 1:
-                    char ques = 'y';
-                        Console.Write("Would you like to get a prompt question to respond to? ");
-                    ques = char.Parse(Console.ReadLine());
-                    if(ques == 'y')
-                    {
+                    // char ques = 'y';
+                    //     Console.Write("Would you like to get a prompt question to respond to? ");
+                    // ques = char.Parse(Console.ReadLine());
+                    // if(ques == 'y')
+                    // {
                         entity.Display();
-                    }
-                    else
-                    {
-                        Console.Write("Start entring > ");
-                        string data = Console.ReadLine();
-                        entity.SetAllEntry(data);
-                    }
+                    // }
+                    // else
+                    // {
+                    //     Console.Write("Start entring > ");
+                    //     string data = Console.ReadLine();
+                    //     entity.SetAllEntry(data);
+                    // }
                     // Console.WriteLine($"{entity.getPrompt()} \n{entity.getEntryText()} \n{entity.getDate()}");
                     journal.AddEntry(entity);
                     break;

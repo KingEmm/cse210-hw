@@ -20,11 +20,11 @@ public class Journal
     {
         foreach(Entry line in _entries)
         {
-            Console.WriteLine("\n");
+            Console.WriteLine("");
             Console.WriteLine(line.getPrompt());
             Console.WriteLine(line.getEntryText());
             Console.WriteLine(line.getDate());
-            Console.WriteLine("\n");
+            Console.WriteLine("");
         }
     }
 
