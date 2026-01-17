@@ -34,8 +34,8 @@ class Program
         do
         {
             Console.Write("Enter a number: ");
-            string number = Console.ReadLine();
-            num = float.Parse(number);
+            // string number = ;
+            num = float.Parse(Console.ReadLine());
             if (num != 0)
             {
                 numbers.Add(num);
