@@ -1,3 +1,5 @@
+// I added a functions that saves to and load from a json file.
+
 using System;
 
 class Program
