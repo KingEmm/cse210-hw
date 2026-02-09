@@ -3,49 +3,49 @@ using System.ComponentModel.DataAnnotations;
 
 class Video
 {
-    public string author;
-    public string title;
-    public int length;
-    public List<Comment> comments = new List<Comment>();
+    public string _author;
+    public string _title;
+    public int _length;
+    public List<Comment> _comments = new List<Comment>();
 
     public int GetCommentLength()
     {
-        return comments.Count();
+        return _comments.Count();
     }
 
     public void GetComments()
     {
-        foreach(Comment comment in comments)
+        foreach(Comment comment in _comments)
         {
-            Console.Write($"    {comment.name} | ");
-            Console.WriteLine(comment.comment);
+            Console.Write($"    {comment._name} | ");
+            Console.WriteLine(comment._comment);
         }
     }
 
-    public void addComment(Comment _comment)
+    public void addComment(Comment comment)
     {
-        comments.Add(_comment);
+        _comments.Add(comment);
     }
 
     public void DisplayVideoInfo()
     {
-        Console.WriteLine($"Author: {author}");
-        Console.WriteLine($"Title: {title}");
+        Console.WriteLine($"Author: {_author}");
+        Console.WriteLine($"Title: {_title}");
         Console.Write($"Duration: ");
-        if (length > 3600)
+        if (_length > 3600)
         {
-            int hrs = length / 3600;
-            length = length % 3600;
+            int hrs = _length / 3600;
+            _length = _length % 3600;
             Console.Write($"{hrs}hrs ");
         }
-        if (length > 60)
+        if (_length > 60)
         {
-            int min = length / 60;
-            length = length % 60;
+            int min = _length / 60;
+            _length = _length % 60;
             Console.Write($"{min}min ");
             
         }
-        Console.WriteLine($"{length}s");
+        Console.WriteLine($"{_length}s");
         Console.WriteLine();
         Console.WriteLine("Comments:");
         GetComments();

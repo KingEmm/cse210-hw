@@ -2,16 +2,16 @@ using System;
 
 class Comment
 {
-    public string name;
-    public string comment;
+    public string _name;
+    public string _comment;
 
     public Comment()
     {
     }
-    public Comment(string _name, string _comment)
+    public Comment(string name, string comment)
     {
-        name = _name;
-        comment = _comment;
+        _name = name;
+        _comment = comment;
     }
 
     // public void Main(string[] args)

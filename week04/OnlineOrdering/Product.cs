@@ -2,32 +2,32 @@
 
 class Product
 {
-    private string name;
-    private int productID;
-    private float price;
-    private int quantity;
+    private string _name;
+    private int _productID;
+    private float _price;
+    private int _quantity;
     public Product(){}
-    public Product(string _name, int _productID, float _price, int _quantity)
+    public Product(string name, int productID, float price, int quantity)
     {
-        name = _name;
-        productID = _productID;
-        price = _price;
-        quantity = _quantity;
+        _name = name;
+        _productID = productID;
+        _price = price;
+        _quantity = quantity;
     }
 
     public float GetTotalCost()
     {
-        return price * quantity;
+        return _price * _quantity;
     }
 
     public string GetName()
     {
-        return name;
+        return _name;
     }
 
     public int GetProductID()
     {
-        return productID;
+        return _productID;
     }
 
 }

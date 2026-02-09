@@ -2,27 +2,27 @@
 
 class Order
 {
-    private Customer customer;
-    private List<Product> products; //= List<Product()>();
+    private Customer _customer;
+    private List<Product> _products; //= List<Product()>();
 
 
     public Order(){}
-    public Order(Customer _customer, List<Product> _products)
+    public Order(Customer customer, List<Product> products)
     {
-        customer = _customer;
-        products = _products;
+        _customer = customer;
+        _products = products;
     }
 
     public float GetTotalPrice()
     {
         float total = 0;
 
-        foreach(Product product in products)
+        foreach(Product product in _products)
         {
             total += product.GetTotalCost();
         }
 
-        if (customer.LivesInUSA())
+        if (_customer.LivesInUSA())
         {
             total += 5;
         }
@@ -36,7 +36,7 @@ class Order
     public void PackingLabel()
     {
         Console.WriteLine("Products:");
-        foreach(Product product in products)
+        foreach(Product product in _products)
         {
             Console.WriteLine($"    {product.GetProductID()}: {product.GetName()}");
         }
@@ -44,9 +44,9 @@ class Order
     }
     public void ShippingLabel()
     {
-        Console.WriteLine($"Name: {customer.GetName()}");
+        Console.WriteLine($"Name: {_customer.GetName()}");
         Console.WriteLine("Address:");
-        Console.WriteLine($"{customer.GetAddress()}");
+        Console.WriteLine($"{_customer.GetAddress()}");
         Console.WriteLine("-------------------------------------------------------------");
     }
 }

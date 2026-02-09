@@ -2,25 +2,25 @@ using System.Security.Cryptography.X509Certificates;
 
 class Customer
 {
-    private string name;
-    private Address address;
+    private string _name;
+    private Address _address;
     public Customer(){}
-    public Customer(string _name, Address _address)
+    public Customer(string name, Address address)
     {
-        name = _name;
-        address = _address;
+        _name = name;
+        _address = address;
     }
     public bool LivesInUSA()
     {
-        return address.InTheUS();
+        return _address.InTheUS();
     }
 
     public string GetName()
     {
-        return name;
+        return _name;
     }
     public string GetAddress()
     {
-        return address.getFullAddress();
+        return _address.getFullAddress();
     }
 }
