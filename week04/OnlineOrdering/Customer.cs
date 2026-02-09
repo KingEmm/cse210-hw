@@ -21,6 +21,6 @@ class Customer
     }
     public string GetAddress()
     {
-        return _address.getFullAddress();
+        return _address.GetFullAddress();
     }
 }

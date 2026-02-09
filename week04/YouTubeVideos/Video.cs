@@ -22,7 +22,7 @@ class Video
         }
     }
 
-    public void addComment(Comment comment)
+    public void AddComment(Comment comment)
     {
         _comments.Add(comment);
     }

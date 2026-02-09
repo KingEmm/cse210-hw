@@ -13,10 +13,7 @@ class Address
         _state = state;
         _country = country;
     }
-    public Address()
-    {
-        
-    }
+    public Address(){}
 
     public bool InTheUS()
     {
@@ -27,7 +24,7 @@ class Address
         return false;
     }
 
-    public string getFullAddress()
+    public string GetFullAddress()
     {
         return $"   {_streetAddress} {_city}, \n   {_state} {_country}.";
     }
