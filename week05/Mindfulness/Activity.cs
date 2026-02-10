@@ -1,5 +1,4 @@
-
-
+// I made sure no question is repeated in my reflection activity class util they are out of question.
 class Activity
 {
     protected string _name;
