@@ -2,10 +2,10 @@ class ListingActivity: Activity
 {
     private int _count;
     private List<string> _prompts = new List<string>();
-    public ListingActivity()
+    public ListingActivity(string name, string description): base(name, description)
     {
-        _name = "Listing";
-        _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        // _name = "Listing";
+        // _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
 
         _prompts.Add("Who are people that you appreciate? ");
         _prompts.Add("What are personal strengths of yours? ");

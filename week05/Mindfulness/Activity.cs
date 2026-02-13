@@ -1,11 +1,13 @@
-// I made sure no question is repeated in my reflection activity class util they are out of question.
-
 class Activity
 {
-    protected string _name;
-    protected string _description;
+    private string _name;
+    private string _description;
     protected int _duration;
-    public Activity(){}
+    public Activity(string name, string description)
+    {
+        _name = name;
+        _description = description;
+    }
 
     public void DisplayStaritngMessage()
     {
