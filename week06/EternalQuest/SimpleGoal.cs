@@ -1,4 +1,4 @@
-abstract class SimpleGoal : Goal
+class SimpleGoal : Goal
 {
     private bool _isComplete;
     public SimpleGoal(string name, string descrition, string points): base(name, descrition, points)
@@ -12,6 +12,7 @@ abstract class SimpleGoal : Goal
     public override void RecordEvent()
     {
         _isComplete=true;
+        Console.WriteLine(GetDetailsString());
     }
 
     public override bool IsComplete()
@@ -24,10 +25,6 @@ abstract class SimpleGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        if (_isComplete)
-        {
-            return $"[X] Congratulations you earned {_points} points on {_shortName} Goal.";
-        }
-        return $"[ ] Complete {_shortName} goal to earn {_points} points";
+        return $"SimpleGoal:{_shortName} | {_description} | {_points} | {IsComplete()}";
     }
 }

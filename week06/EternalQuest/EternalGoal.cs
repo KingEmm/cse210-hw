@@ -1,22 +1,23 @@
-abstract class EternalGoal : Goal
+class EternalGoal : Goal
 {
-    public EternalGoal(string name, string descrition, string points): base(name, descrition, points)
+    public EternalGoal(string name, string description, string points): base(name, description, points)
     {
         _shortName = name;
-        _description = descrition;
+        _description = description;
         _points = points;
     }
     
 
-    public override abstract void RecordEvent();
+    public override void RecordEvent()
+    {
+        Console.WriteLine(GetDetailsString());
+    }
     public override bool IsComplete()
     {
-        if (_isComplete)
-        {
-            return _isComplete;
-        }
-        return _isComplete;
+        return int.Parse(_points) >=  int.Parse(_points)*2;
     }
-    public override abstract string GetDetailsString();
-    public override abstract string GetStringRepresentation();
+    public override string GetStringRepresentation()
+    {
+        return $"SimpleGoal:{_shortName} | {_description} | {_points}";
+    }
 }
