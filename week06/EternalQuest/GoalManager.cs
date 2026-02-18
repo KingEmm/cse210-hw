@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 class GoalManager
 {
     private List<Goal> _goal = new List<Goal>();
@@ -7,7 +9,7 @@ class GoalManager
     public void Start()
     {
         int choice = 0;
-        while(choice != 6)
+        while(choice != 7)
         {
             Console.WriteLine($"\nScore : {_score}\n");
             Console.WriteLine("Menu Options");
@@ -15,8 +17,9 @@ class GoalManager
             Console.WriteLine(" 2. List Goals");
             Console.WriteLine(" 3. Save Goals");
             Console.WriteLine(" 4. Load Goals");
-            Console.WriteLine(" 5. Record Event");
-            Console.WriteLine(" 6. Quit");
+            Console.WriteLine(" 5. Clear Goals");
+            Console.WriteLine(" 6. Record Event");
+            Console.WriteLine(" 7. Quit");
 
             Console.Write("Select a choice from the menu: ");
             choice = int.Parse(Console.ReadLine());
@@ -39,10 +42,14 @@ class GoalManager
                     break;
                 
                 case 5:
+                    ClearGoals();
+                    break;
+                
+                case 6:
                     RecordEvent();
                     break;
 
-                case 6:
+                case 7:
                     break;
 
                 default:
@@ -202,6 +209,48 @@ class GoalManager
                 Console.WriteLine("Invalid Type");
             }
         }
-        
     }
+
+    public void ClearGoals()
+    {
+        Console.WriteLine(" 1. Delete Saved Goals");
+        Console.WriteLine(" 2. Delete Entered Goals");
+
+        Console.WriteLine("Select option: ");
+        int choice = int.Parse(Console.ReadLine());
+
+        if(choice == 1)
+        {
+            DeleteStoredGoal();
+        }
+        else if(choice == 2)
+        {
+            DeleteEnteredGoal();
+        }
+    }
+    public void DeleteEnteredGoal()
+    {
+        Console.Write("Will you like to wipe all goals (y/n): ");
+        string ans = Console.ReadLine();
+
+        if (ans == "yes" | ans == "y")
+        {
+            _goal.Clear();
+        }
+        else if (ans == "no" | ans == "n")
+        {
+            ListGoalNames();
+            Console.Write("Enter index : ");
+            int index = int.Parse(Console.ReadLine()) - 1;
+            _goal.RemoveAt(index);
+        }
+    }
+    public void DeleteStoredGoal()
+    {
+        Console.Write("Enter file name: ");
+        string fileName  = Console.ReadLine();
+
+        File.Delete(fileName);
+    }
+        
 }

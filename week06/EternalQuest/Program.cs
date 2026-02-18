@@ -1,3 +1,5 @@
+// I added a functionality to delete goals both stored or in memory
+
 using System;
 
 class Program
