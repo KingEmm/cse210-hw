@@ -1,12 +1,12 @@
 class SimpleGoal : Goal
 {
     private bool _isComplete;
-    public SimpleGoal(string name, string descrition, string points): base(name, descrition, points)
+    public SimpleGoal(string name, string descrition, string points, bool isComplete = false): base(name, descrition, points)
     {
         _shortName = name;
         _description = descrition;
         _points = points;
-        _isComplete = false;
+        _isComplete = isComplete;
     }
 
     public override void RecordEvent()
@@ -25,6 +25,6 @@ class SimpleGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{_shortName} | {_description} | {_points} | {IsComplete()}";
+        return $"SimpleGoal:{_shortName}|{_description}|{_points}|{IsComplete()}";
     }
 }

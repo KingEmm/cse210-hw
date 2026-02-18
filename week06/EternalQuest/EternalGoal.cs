@@ -14,10 +14,10 @@ class EternalGoal : Goal
     }
     public override bool IsComplete()
     {
-        return int.Parse(_points) >=  int.Parse(_points)*2;
+        return false;
     }
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{_shortName} | {_description} | {_points}";
+        return $"EternalGoal:{_shortName}|{_description}|{_points}";
     }
 }

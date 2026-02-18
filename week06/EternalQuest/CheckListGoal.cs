@@ -3,23 +3,28 @@ class CheckListGoal : Goal
     private int _amountCompleted;
     private int _target;
     private int _bonus;
-    public CheckListGoal(string name, string descrition, string points, int target, int bonus): base(name, descrition, points)
+    public CheckListGoal(string name, string descrition, string points, int target, int bonus, int amountCompleted = 0): base(name, descrition, points)
     {
         _shortName = name;
         _description = descrition;
         _points = points;
         _target = target;
         _bonus = bonus;
+        _amountCompleted = amountCompleted;
     }
 
+    public int GetBonus()
+    {
+        return _bonus;
+    }
     public override void RecordEvent()
     {
         _amountCompleted += 1;
         // _points = $"{int.Parse(_points) * _target}";
-        if (IsComplete())
-        {
-            _points = $"{int.Parse(_points) + _bonus}";
-        }
+        // if (IsComplete())
+        // {
+        //     // _points = $"{int.Parse(_points) + _bonus}";
+        // }
         Console.WriteLine(GetDetailsString());
     }
     public override bool IsComplete()
@@ -40,6 +45,6 @@ class CheckListGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{_shortName} | {_description} | {_points} | {_bonus} | {_target} | {_amountCompleted}";
+        return $"CheckListGoal:{_shortName}|{_description}|{_points}|{_bonus}|{_target}|{_amountCompleted}";
     }
 }
