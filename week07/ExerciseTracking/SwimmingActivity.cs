@@ -4,20 +4,23 @@ class SwimmingActivity : Activity
 {
     private int _laps;
 
+    public SwimmingActivity(){}// base(date, duration){}
     public SwimmingActivity(string date,int duration): base(date, duration){}
     public SwimmingActivity(string date,int duration, int laps): base(date, duration)
     {
         _laps = laps;
     }
-    public override int GetDistance()
+    public override float GetDistance()
     {
-        return _laps * 50 / 1000;
+        float meters = _laps * 50;
+        return meters / 1000;
     }
-    public override int GetSpeed(int distance=60)
+    public override float GetSpeed(float distance=60)
     {
-        return (distance / _duration) * 60;
+        
+        return distance / _duration * 60;
     }
-    public override int GetPace(int minutes=60)
+    public override float GetPace(float minutes=60)
     {
         return minutes / GetDistance();
     }
