@@ -12,18 +12,18 @@ class CyclingActivity : Activity
 
     public override float GetDistance()
     {
-        return _speed * _duration;
+        return GetSpeed(_speed) * _duration;
     }
-    public override float GetSpeed(float distance=60)
+    public override float GetSpeed(float speed=60)
     {
-        return distance / GetPace();
+        return speed;
     }
     public override float GetPace(float minutes=60)
     {
-        return minutes / _speed;
+        return minutes / GetSpeed(_speed);
     }
     public override string GetSummary()
     {
-        return $"{GetDate()} Cycling ({_duration}min)- Distance {GetDistance()}km, Speed: {GetSpeed()}kph, Pace: {GetPace()} min per km";
+        return $"{GetDate()} Cycling ({_duration}min)- Distance {GetDistance()}km, Speed: {GetSpeed(_speed)}kph, Pace: {GetPace(_duration)} min per km";
     }
 }
