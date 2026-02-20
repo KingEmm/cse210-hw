@@ -23,6 +23,6 @@ class SwimmingActivity : Activity
     }
     public override string GetSummary()
     {
-        return $"{GetDate()} Swimming {_duration}- Distance {GetDistance()}km, Speed: {GetSpeed(GetDistance())}kph, Pace: {GetPace()} min per km";
+        return $"{GetDate()} Swimming ({_duration}mins)- Distance {GetDistance()}km, Speed: {GetSpeed(GetDistance())}kph, Pace: {GetPace(_duration)} min per km";
     }
 }

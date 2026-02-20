@@ -24,6 +24,6 @@ class RunningActivity : Activity
     }
     public override string GetSummary()
     {
-        return $"{GetDate()} Running {_duration}- Distance {GetDistance()}km, Speed: {GetSpeed()}kph, Pace: {GetPace()} min per km";
+        return $"{GetDate()} Running ({_duration}min)- Distance {GetDistance()}km, Speed: {GetSpeed(GetDistance())}kph, Pace: {GetPace(_duration)} min per km";
     }
 }
